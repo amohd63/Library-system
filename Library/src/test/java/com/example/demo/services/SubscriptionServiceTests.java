@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
-import com.example.demo.models.Subscription;
+import com.example.demo.models.Subscription.BudgetSubscription;
+import com.example.demo.models.Subscription.Subscription;
 import com.example.demo.repositories.SubscriptionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,7 +38,7 @@ public class SubscriptionServiceTests {
 
     @BeforeEach
     public void fillData() {
-        subscription = new Subscription(1, 1, Date.valueOf("2023-01-01"), Date.valueOf("2023-12-31"));
+        subscription = new BudgetSubscription(1, 1, Date.valueOf("2023-01-01"), Date.valueOf("2023-12-31"));
     }
 
     @Test

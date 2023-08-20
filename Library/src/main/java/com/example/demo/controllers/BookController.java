@@ -18,9 +18,6 @@ public class BookController {
     @Autowired
     public BookService service;
 
-    public BookController() {
-    }
-
     @GetMapping
 //    @ResponseStatus(HttpStatus.OK)
     public List<Book> getLibraryBooks() {

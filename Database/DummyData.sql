@@ -13,11 +13,11 @@ VALUES
     ('SN789', 'Fiction Adventures', 400, 'FICTION', 'Author C', 7, 7);
 
 -- Inserting dummy data into Subscription table
-INSERT INTO Subscription (subscriptionID, userID, start_date, end_date)
+INSERT INTO Subscription (subscriptionID, userID, dtype, start_date, end_date, borrow_limit)
 VALUES
-    (1, 1, '2023-01-01', '2023-12-31'),
-    (2, 2, '2023-02-15', '2023-08-15'),
-    (3, 3, '2022-03-10', '2022-09-10');
+    (1, 1, 'BudgetSubscription', '2023-01-01', '2023-12-31', 1),
+    (2, 2, 'BudgetSubscription', '2023-02-15', '2023-08-15', 1),
+    (3, 3, 'PremiumSubscription', '2022-03-10', '2022-09-10', 4);
 
 -- Inserting dummy data into Borrow table
 INSERT INTO Borrow (borrowID, userID, serial_number, borrow_date, due_date)

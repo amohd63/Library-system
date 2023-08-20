@@ -1,4 +1,4 @@
-drop table Users, Books, Borrow, Subscription;
+-- drop table Users, Books, Borrow, Subscription;
 -- User table
 CREATE TABLE Users (
     userID INT PRIMARY KEY AUTO_INCREMENT,
@@ -25,6 +25,8 @@ CREATE TABLE Subscription (
     userID INT,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
+    borrow_limit INT,
+    dtype VARCHAR(80), -- Discriminator
     FOREIGN KEY (userID) REFERENCES Users(userID) ON DELETE CASCADE
 );
 ALTER TABLE Subscription AUTO_INCREMENT=1;

@@ -1,15 +1,9 @@
 package com.example.demo.controllers;
 
-import com.example.demo.models.Book;
-import com.example.demo.models.Borrow;
-import com.example.demo.models.Subscription;
-import com.example.demo.models.User;
+import com.example.demo.models.Subscription.Subscription;
 import com.example.demo.services.SubscriptionService;
-import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/subscribe")
@@ -17,9 +11,10 @@ public class SubscriptionController {
     @Autowired
     SubscriptionService service;
 
+    @GetMapping(params = "type")
     @PostMapping
-    public String subscribe(@RequestBody Subscription subscription) {
-        return service.subscribe(subscription);
+    public String subscribe(@RequestBody Subscription subscription, @RequestParam("type") String subscriptionType) {
+        return service.subscribe(subscription, subscriptionType);
     }
 
     @PutMapping

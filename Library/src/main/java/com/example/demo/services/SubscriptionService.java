@@ -1,29 +1,19 @@
 package com.example.demo.services;
 
-import com.example.demo.models.Book;
-import com.example.demo.models.Borrow;
-import com.example.demo.models.Subscription;
-import com.example.demo.models.User;
-import com.example.demo.repositories.BookRepository;
-import com.example.demo.repositories.BorrowRepository;
+import com.example.demo.models.Subscription.Subscription;
 import com.example.demo.repositories.SubscriptionRepository;
-import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-import java.math.BigInteger;
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class SubscriptionService {
     @Autowired
     SubscriptionRepository subscriptionRepository;
 
-    public String subscribe(Subscription subscription) {
+    public String subscribe(Subscription subscription, String subscriptionType) {
         if (subscriptionRepository.existsSubscriptionByUserID(subscription.getUserID())) {
             Subscription userSubscription = subscriptionRepository.findSubscriptionByUserID(subscription.getUserID());
             if (userSubscription.getEndDate().before(Date.valueOf(LocalDate.now()))) {

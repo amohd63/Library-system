@@ -1,13 +1,8 @@
 package com.example.demo.repositories;
 
+import com.example.demo.models.Subscription.Subscription;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.example.demo.models.Subscription;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import java.math.BigInteger;
 
 @Repository
 public interface SubscriptionRepository extends JpaRepository<Subscription, Integer> {
