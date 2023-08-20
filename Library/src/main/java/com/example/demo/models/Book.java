@@ -5,21 +5,18 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "books")
-@Setter
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
+@Data
 public class Book{
     @Id
-    @Column(name = "serialNumber")
+    @Column(name = "serial_number")
     private String serialNumber;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "numOfPages")
+    @Column(name = "num_of_pages")
     private int numOfPages;
 
     @Column(name = "genre")
@@ -29,10 +26,10 @@ public class Book{
     @Column(name = "author")
     private String author;
 
-    @Column(name = "availableCopies")
+    @Column(name = "available_copies")
     private int availableCopies;
 
-    @Column(name = "totalCopies")
+    @Column(name = "total_copies")
     private int totalCopies;
 
     public Book(String serialNumber, String name, int numOfPages, String genre, String author, int availableCopies, int totalCopies) {

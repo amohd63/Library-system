@@ -6,12 +6,9 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-@Setter
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

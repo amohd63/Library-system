@@ -7,12 +7,9 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "borrow")
-@Setter
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
+@Data
 public class Borrow {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

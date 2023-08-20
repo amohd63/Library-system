@@ -9,12 +9,9 @@ import java.sql.Date;
 @Entity
 @Table(name = "subscription")
 @DiscriminatorColumn(name = "dtype")
-@Setter
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
+@Data
 public abstract class Subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

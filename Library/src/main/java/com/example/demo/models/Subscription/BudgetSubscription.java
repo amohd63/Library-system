@@ -2,11 +2,13 @@ package com.example.demo.models.Subscription;
 
 import lombok.NoArgsConstructor;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.sql.Date;
 
 @Entity
 @NoArgsConstructor
+@DiscriminatorValue("BudgetSubscription")
 public class BudgetSubscription extends Subscription{
     private static final int BORROW_LIMIT = 1;
     public BudgetSubscription(Integer subscriptionID, Integer userID, Date startDate, Date endDate) {
