@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "98bf5229-b917-431f-aebb-7f132afdae19",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28992947"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "AddUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"userID\": 5,\r\n        \"userName\": \"user11\",\r\n        \"userPassword\": \"password5\",\r\n        \"firstName\": \"Alisda\",\r\n        \"lastName\": \"Mohammed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/user?userName=user1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "user1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"userID\": 5,\r\n        \"userName\": \"user11\",\r\n        \"userPassword\": \"password5\",\r\n        \"firstName\": \"Alisda\",\r\n        \"lastName\": \"Mohammed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/user?userName=user1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "user1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "ListBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"serialNumber\": \"SN323\",\r\n        \"name\": \"Test book\",\r\n        \"numOfPages\": 50,\r\n        \"genre\": \"NOVEL\",\r\n        \"author\": \"Test user\",\r\n        \"availableCopies\": 5,\r\n        \"totalCopies\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBookBySerialNumber",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/book?serialNumber=SN323",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "serialNumber",
+									"value": "SN323"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"serialNumber\": \"SN323\",\r\n        \"name\": \"Test book\",\r\n        \"numOfPages\": 50,\r\n        \"genre\": \"NOVEL\",\r\n        \"author\": \"Test user\",\r\n        \"availableCopies\": 5,\r\n        \"totalCopies\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/book?serialNumber=SN323",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"book"
+							],
+							"query": [
+								{
+									"key": "serialNumber",
+									"value": "SN323"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Borrow",
+			"item": [
+				{
+					"name": "UserBorrowHistory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/borrow?userID=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"borrow"
+							],
+							"query": [
+								{
+									"key": "userID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrowBook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/borrow?userID=3&serialNumber=SN789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"borrow"
+							],
+							"query": [
+								{
+									"key": "userID",
+									"value": "3"
+								},
+								{
+									"key": "serialNumber",
+									"value": "SN789"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExtendBorrow",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/borrow?userID=3&serialNumber=SN789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"borrow"
+							],
+							"query": [
+								{
+									"key": "userID",
+									"value": "3"
+								},
+								{
+									"key": "serialNumber",
+									"value": "SN789"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete borrow",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/borrow?userID=3&serialNumber=SN789",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"borrow"
+							],
+							"query": [
+								{
+									"key": "userID",
+									"value": "3"
+								},
+								{
+									"key": "serialNumber",
+									"value": "SN789"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription",
+			"item": [
+				{
+					"name": "Subscribe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"subscriptionID\": 1,\r\n        \"userID\": 1,\r\n        \"startDate\": \"2023-04-05\",\r\n        \"endDate\": \"2023-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/subscribe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSubscription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/subscribe?userID=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"subscribe"
+							],
+							"query": [
+								{
+									"key": "userID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RenewSubscription",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"subscriptionID\": 1,\r\n        \"userID\": 1,\r\n        \"startDate\": \"2023-04-05\",\r\n        \"endDate\": \"2024-12-31\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/subscribe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete subscription",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/subscribe?userID=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"subscribe"
+							],
+							"query": [
+								{
+									"key": "userID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
