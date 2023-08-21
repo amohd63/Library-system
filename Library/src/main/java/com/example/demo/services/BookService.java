@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.models.Book.Book;
+import com.example.demo.models.Book.BookContext;
 import com.example.demo.repositories.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ public class BookService {
     }
 
     public String addBook(Book book) {
+        BookContext bookContext = new BookContext(book);
+        bookContext.executeStrategy();
         if (bookRepository.existsById(book.getSerialNumber())) {
             return "Book already in the database!";
         }

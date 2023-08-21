@@ -6,11 +6,11 @@ VALUES
     (3, 'user3', 'password3', 'Michael', 'Johnson');
 
 -- Inserting dummy data into Books table
-INSERT INTO Books (serial_number, name, num_of_pages, genre, author, available_copies, total_copies)
+INSERT INTO Books (serial_number, name, dtype, num_of_pages, genre, author, available_copies, total_copies)
 VALUES
-    ('SN123', 'The Great Novel', 300, 'NOVEL', 'Author A', 5, 10),
-    ('SN456', 'Science Explained', 250, 'SCIENCE', 'Author B', 3, 5),
-    ('SN789', 'Fiction Adventures', 400, 'FICTION', 'Author C', 7, 7);
+    ('SN123', 'The Great Novel', 'RegularBook', 300, 'NOVEL', 'Author A', 5, 10),
+    ('SN456', 'Science Explained', 'RegularBook', 250, 'SCIENCE', 'Author B', 3, 5),
+    ('SN789', 'Fiction Adventures', 'RegularBook', 400, 'FICTION', 'Author C', 7, 7);
 
 -- Inserting dummy data into Subscription table
 INSERT INTO Subscription (subscriptionID, userID, dtype, start_date, end_date, borrow_limit)

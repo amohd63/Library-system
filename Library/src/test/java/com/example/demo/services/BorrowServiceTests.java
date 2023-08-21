@@ -1,6 +1,6 @@
 package com.example.demo.services;
 
-import com.example.demo.models.Borrow;
+import com.example.demo.models.Borrow.Borrow;
 import com.example.demo.repositories.BorrowRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -17,7 +17,8 @@ CREATE TABLE Books (
     genre VARCHAR(20) NOT NULL,
     author VARCHAR(100) NOT NULL,
     available_copies INT NOT NULL,
-    total_copies INT NOT NULL
+    total_copies INT NOT NULL,
+    dtype VARCHAR(80) -- Discriminator
 );
 
 CREATE TABLE Subscription (

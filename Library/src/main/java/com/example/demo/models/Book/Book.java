@@ -1,16 +1,25 @@
 package com.example.demo.models.Book;
 
 import com.example.demo.models.Genre;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.*;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "books")
-//@DiscriminatorColumn(name = "dtype")
+@DiscriminatorColumn(name = "dtype")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Book{
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = RegularBook.class, name = "book"),
+        @JsonSubTypes.Type(value = Journal.class, name = "journal"),
+        @JsonSubTypes.Type(value = ReferencesEncyclopedia.class, name = "references"),
+        @JsonSubTypes.Type(value = Other.class, name = "other")
+})
+public abstract class Book implements BookStrategy{
     @Id
     @Column(name = "serial_number")
     private String serialNumber;
@@ -33,8 +42,6 @@ public class Book{
 
     @Column(name = "total_copies")
     private int totalCopies;
-
-//    private String dtype;
 
     public Book(String serialNumber, String name, int numOfPages, String genre, String author, int availableCopies, int totalCopies) {
         super();

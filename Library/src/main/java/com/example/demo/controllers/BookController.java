@@ -34,7 +34,7 @@ public class BookController {
         Book book = service.findBook(serialNumber);
         Resource<Book> resource = new Resource<Book>(book);
         ControllerLinkBuilder linkTo = linkTo(methodOn(this.getClass()).getLibraryBooks());
-        resource.add(linkTo.withRel("all-students"));
+        resource.add(linkTo.withRel("all-books"));
         return resource;
     }
 

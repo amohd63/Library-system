@@ -1,6 +1,6 @@
 package com.example.demo.services;
 
-import com.example.demo.models.Borrow;
+import com.example.demo.models.Borrow.Borrow;
 import com.example.demo.repositories.BorrowRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class BorrowService {
 
     //handle if the user have two active books
     public String borrowBook(Integer userID, String serialNumber) {
-        if (borrowRepository.findBorrowByUserIDAndEndDateGreaterThanEqual(userID, Date.valueOf(LocalDate.now())).size() > 2) {
+        if (borrowRepository.countBorrowByUserIDAndEndDateGreaterThanEqual(userID, Date.valueOf(LocalDate.now())) > 2) {
             return "You can borrow up to 2 books only.";
         }
         if (borrowRepository.existsBorrowByUserIDAndSerialNumber(userID, serialNumber)) {
