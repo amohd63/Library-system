@@ -1,10 +1,12 @@
-package com.example.demo.models;
+package com.example.demo.models.Book;
 
+import com.example.demo.models.Genre;
 import lombok.*;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "books")
+//@DiscriminatorColumn(name = "dtype")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -31,6 +33,8 @@ public class Book{
 
     @Column(name = "total_copies")
     private int totalCopies;
+
+//    private String dtype;
 
     public Book(String serialNumber, String name, int numOfPages, String genre, String author, int availableCopies, int totalCopies) {
         super();

@@ -1,6 +1,8 @@
 package com.example.demo.services;
 
 import com.example.demo.models.Subscription.Subscription;
+import com.example.demo.models.Subscription.SubscriptionContext;
+import com.example.demo.models.Subscription.SubscriptionStrategy;
 import com.example.demo.repositories.SubscriptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +15,9 @@ public class SubscriptionService {
     @Autowired
     SubscriptionRepository subscriptionRepository;
 
-    public String subscribe(Subscription subscription, String subscriptionType) {
+    public String subscribe(Subscription subscription) {
+        SubscriptionContext subscriptionContext = new SubscriptionContext(subscription);
+        subscriptionContext.executeStrategy();
         if (subscriptionRepository.existsSubscriptionByUserID(subscription.getUserID())) {
             Subscription userSubscription = subscriptionRepository.findSubscriptionByUserID(subscription.getUserID());
             if (userSubscription.getEndDate().before(Date.valueOf(LocalDate.now()))) {

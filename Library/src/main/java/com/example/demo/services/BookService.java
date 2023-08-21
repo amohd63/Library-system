@@ -1,6 +1,6 @@
 package com.example.demo.services;
 
-import com.example.demo.models.Book;
+import com.example.demo.models.Book.Book;
 import com.example.demo.repositories.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

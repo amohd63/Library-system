@@ -1,4 +1,4 @@
--- drop table Users, Books, Borrow, Subscription;
+drop table Users, Books, Borrow, Subscription;
 -- User table
 CREATE TABLE Users (
     userID INT PRIMARY KEY AUTO_INCREMENT,

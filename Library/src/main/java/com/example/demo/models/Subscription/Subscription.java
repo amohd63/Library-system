@@ -1,5 +1,7 @@
 package com.example.demo.models.Subscription;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,7 +14,12 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public abstract class Subscription {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = PremiumSubscription.class, name = "premium"),
+        @JsonSubTypes.Type(value = BudgetSubscription.class, name = "budget")
+})
+public abstract class Subscription implements SubscriptionStrategy{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "subscriptionID")
