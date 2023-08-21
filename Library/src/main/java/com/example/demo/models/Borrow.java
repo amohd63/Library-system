@@ -1,4 +1,4 @@
-package com.example.demo.models.Borrow;
+package com.example.demo.models;
 
 import lombok.*;
 
@@ -27,10 +27,6 @@ public class Borrow {
 
     @Column(name = "due_date")
     private Date endDate;
-
-    private int borrowDaysLimit;
-
-    private int extensionLimit;
 
     public Borrow(Integer userID, String serialNumber) {
         this.setUserID(userID);
