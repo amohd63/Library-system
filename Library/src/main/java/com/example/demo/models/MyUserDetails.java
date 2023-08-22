@@ -16,6 +16,9 @@ public class MyUserDetails implements UserDetails {
     private List<GrantedAuthority> authorities;
 
     public MyUserDetails(User user) {
+        if (user == null){
+            System.out.println("Test");
+        }
         this.userName = user.getUserName();
         this.password = user.getUserPassword();
         this.authorities = Arrays.stream(user.getRoles().split(","))

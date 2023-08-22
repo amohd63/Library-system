@@ -5,6 +5,7 @@ import com.example.demo.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,12 +20,12 @@ public class BookController {
     public BookService service;
 
     @GetMapping
-//    @ResponseStatus(HttpStatus.OK)
     public List<Book> getLibraryBooks() {
         return service.getAllBooks();
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('admin')")
     public String addBook(@RequestBody Book book) {
         return service.addBook(book);
     }

@@ -1,9 +1,9 @@
 -- Inserting dummy data into Users table
 INSERT INTO Users (userID, user_name, user_password, first_name, last_name, roles)
 VALUES
-    (1, 'user1', 'password1', 'John', 'Doe', 'admin,user'),
-    (2, 'user2', 'password2', 'Jane', 'Smith', 'user'),
-    (3, 'user3', 'password3', 'Michael', 'Johnson', 'user');
+    (1, 'user1', '$2a$10$BAbGg8BmhWEAHt5pQj0/u.KyZ8Dduc3KO09.ZeuI9MBvWmhcvwcEa', 'John', 'Doe', 'admin,user'),
+    (2, 'user2', '$2a$10$fLYro7HBDD3Y1ellTv4C9OycF7oeTKVfvC6Etue16yG6R3tN61h4O', 'Jane', 'Smith', 'user'),
+    (3, 'user3', '$2a$10$i7SfJPWgAQ9MXuBUZBWHqeIdskSjWv5fvGsryBti1t1QGMD7H/UMe', 'Michael', 'Johnson', 'user');
 
 -- Inserting dummy data into Books table
 INSERT INTO Books (serial_number, name, dtype, num_of_pages, genre, author, available_copies, total_copies)

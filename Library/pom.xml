@@ -73,7 +73,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.22</version>
+			<version>1.18.20</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
 		</dependency>
 
 	</dependencies>

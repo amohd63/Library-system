@@ -54,9 +54,9 @@ public class BookControllerTest {
 
     @BeforeEach
     public void fillData() {
-        book1 = new RegularBook("SN123", "The Great Novel", 300, "NOVEL", "Author A", 5, 10);
-        book2 = new RegularBook("SN456", "Science Explained", 250, "SCIENCE", "Author B", 3, 5);
-        book3 = new RegularBook("SN789", "Fiction Adventures", 400, "FICTION", "Author C", 7, 7);
+//        book1 = new RegularBook("SN123", "The Great Novel", 300, "NOVEL", "Author A", 5, 10);
+//        book2 = new RegularBook("SN456", "Science Explained", 250, "SCIENCE", "Author B", 3, 5);
+//        book3 = new RegularBook("SN789", "Fiction Adventures", 400, "FICTION", "Author C", 7, 7);
     }
 
     @Test

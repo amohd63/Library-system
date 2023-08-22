@@ -48,7 +48,7 @@ public class UserControllerTest {
 
     @BeforeEach
     public void fillData() {
-        user = new User(1, "user1", "password1", "John", "Doe");
+//        user = new User(1, "user1", "password1", "John", "Doe");
     }
 
     @Test

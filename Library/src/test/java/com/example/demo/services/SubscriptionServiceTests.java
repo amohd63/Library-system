@@ -38,7 +38,7 @@ public class SubscriptionServiceTests {
 
     @BeforeEach
     public void fillData() {
-        subscription = new BudgetSubscription(1, 1, Date.valueOf("2023-01-01"), Date.valueOf("2023-12-31"));
+//        subscription = new BudgetSubscription(1, 1, Date.valueOf("2023-01-01"), Date.valueOf("2023-12-31"));
     }
 
     @Test
