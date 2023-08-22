@@ -1,9 +1,9 @@
 -- Inserting dummy data into Users table
-INSERT INTO Users (userID, user_name, user_password, first_name, last_name)
+INSERT INTO Users (userID, user_name, user_password, first_name, last_name, roles)
 VALUES
-    (1, 'user1', 'password1', 'John', 'Doe'),
-    (2, 'user2', 'password2', 'Jane', 'Smith'),
-    (3, 'user3', 'password3', 'Michael', 'Johnson');
+    (1, 'user1', 'password1', 'John', 'Doe', 'admin,user'),
+    (2, 'user2', 'password2', 'Jane', 'Smith', 'user'),
+    (3, 'user3', 'password3', 'Michael', 'Johnson', 'user');
 
 -- Inserting dummy data into Books table
 INSERT INTO Books (serial_number, name, dtype, num_of_pages, genre, author, available_copies, total_copies)

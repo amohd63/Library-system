@@ -19,11 +19,11 @@ public class UserService {
     }
 
     public User getUser(String userName) {
-        return userRepository.findUserByUserName(userName);
+        return userRepository.findUserByUserName(userName).get();
     }
 
     public User updateUser(User user) {
-        User userObj = userRepository.findUserByUserName(user.getUserName());
+        User userObj = userRepository.findUserByUserName(user.getUserName()).get();
         if (userObj == null){
             return null;
         }

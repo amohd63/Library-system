@@ -30,13 +30,13 @@ public class UserRepositoryTest {
 
     @BeforeEach
     public void fillData() {
-        user = new User(1, "user1", "password1", "John", "Doe");
+        user = new User(1, "user1", "password1", "John", "Doe", "admin");
     }
 
     @Test
     public void getUserByUsername_success() throws Exception {
-        when(userRepository.findUserByUserName(user.getUserName())).thenReturn(user);
-        User userFromRepo = userRepository.findUserByUserName(user.getUserName());
+        when(userRepository.findUserByUserName(user.getUserName()).get()).thenReturn(user);
+        User userFromRepo = userRepository.findUserByUserName(user.getUserName()).get();
         assertNotNull(userFromRepo);
         assertThat(userFromRepo.getUserID()).isNotEqualTo(null);
         assertEquals(userFromRepo.getUserName(), user.getUserName());
