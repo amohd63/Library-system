@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.example.demo.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,16 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    BCryptPasswordEncoder encoder;
+
     public String addUser(User user) {
         if (userRepository.existsUserByUserName(user.getUserName())) {
             return "User already registered in the database!";
         }
+        user.setUserPassword(
+                encoder.encode(user.getUserPassword())
+        );
         userRepository.save(user);
         return "User added successfully!";
     }
@@ -24,7 +31,7 @@ public class UserService {
 
     public User updateUser(User user) {
         User userObj = userRepository.findUserByUserName(user.getUserName()).get();
-        if (userObj == null){
+        if (userObj == null) {
             return null;
         }
         user.setUserID(userObj.getUserID());
